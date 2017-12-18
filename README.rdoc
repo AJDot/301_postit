@@ -1,5 +1,8 @@
 == Getting Started
 
+Solution
+http://tl-postit.herokuapp.com/
+
 1. Make sure you have rails version 4. Type "rails -v" to make sure.
 2. From this project directory, do "bundle install --without production"
 3. To start the server "rails server".
@@ -27,4 +30,3 @@
   - heroku restart
   - heroku run console
   - heroku help
-
