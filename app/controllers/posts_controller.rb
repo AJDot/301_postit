@@ -8,7 +8,14 @@ class PostsController < ApplicationController
   end
 
   def show
-    @comment = Comment.new
+    respond_to do |format|
+      format.html do
+        @comment = Comment.new
+      end
+      format.json do
+        render json: @post, except: [:id, :user_id], include: { comments: { except: [:post_id, :user_id, :id] }, creator: { except: [:id, :password_digest, :role]}}
+      end
+    end
   end
 
   def new
