@@ -1,6 +1,10 @@
 class Post < ActiveRecord::Base
-  include VoteableAlex
+  PER_PAGE = 3
+
+  include Voteable
   include Sluggable
+
+  default_scope { order('created_at ASC') }
 
   # Must be explicit when deviating from convention
   belongs_to :creator, foreign_key: 'user_id', class_name: 'User'
