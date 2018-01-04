@@ -28,8 +28,8 @@ class User < ActiveRecord::Base
 
   def send_pin_to_twilio
     # put your own credentials here
-    account_sid = 'AC67532bf8aade61f435d28c29575003fd'
-    auth_token = 'b8839d1ddd74406ad60a12688cea23b0'
+    # account_sid = ''
+    # auth_token = ''
     # set up a client to talk to the Twilio REST API
     @client = Twilio::REST::Client.new account_sid, auth_token
 
